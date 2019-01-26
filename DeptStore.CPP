@@ -1,5 +1,4 @@
-
-#include<iostream>
+#include<iostream.h>
 #include<conio.h>
 #include<stdio.h>
 #include<process.h>
@@ -40,39 +39,39 @@ class product
 	void create_product()
 	{
 	 pno=productID();
-	 cout<<"\n\nPlease Enter The Name of The Product ";
+	 cout<<"\n\nPlease Enter The Name of The Product:- ";
 	 gets(name);
-	 cout<<"Please Enter The Category(clothes/shoes/watches)";
+	 cout<<"Please Enter The Category(clothes/shoes/watches):- ";
 	 gets(category);
-	 cout<<"\n\nPlease Enter The Quantity of The Product ";
+	 cout<<"\n\nPlease Enter The Quantity of The Product:- ";
 	 cin>>qty;
-	 cout<<"\nPlease Enter The Price of The Product ";
+	 cout<<"\nPlease Enter The Price of The Product:- ";
 	 cin>>price;
-	 cout<<"\nPlease Enter The Discount (%) ";
+	 cout<<"\nPlease Enter The Discount (%):- ";
 	 cin>>dis;
 	 }
 	void modify_product()
 	{
 	  int qt;
 
-	 cout<<"\n\nPlease Enter The Quantity of The Product ";
+	 cout<<"\n\nPlease Enter The Quantity of The Product:- ";
 	 cin>>qt;
 	 qty=qty+qt;
-	 cout<<"\nPlease Enter The Price of The Product ";
+	 cout<<"\nPlease Enter The Price of The Product:- ";
 	 cin>>price;
-	 cout<<"\nPlease Enter The Discount (%) ";
+	 cout<<"\nPlease Enter The Discount (%):- ";
 	 cin>>dis;
 	 }
 
 	void show_product()
 	{
-	 cout<<"\nThe Product No. of The Product : "<<pno;
-	 cout<<"\nThe Name of The Product : ";
+	 cout<<"\nThe Product No. of The Product:-  "<<pno;
+	 cout<<"\nThe Name of The Product:-  ";
 	 puts(name);
-	 cout<<"\nCategory of the product : "<<category;
-	 cout<<"\nThe Quantity of Product: "<<qty;
-	 cout<<"\nThe Price of The Product : "<<price;
-	 cout<<"\nDiscount : "<<dis;
+	 cout<<"\nCategory of the product:-  "<<category;
+	 cout<<"\nThe Quantity of Product:- "<<qty;
+	 cout<<"\nThe Price of The Product:-  "<<price;
+	 cout<<"\nDiscount:- "<<dis;
 	 }
 
   int  retpno()
@@ -164,7 +163,7 @@ void display_sp(int n)
 	}
     fp.close();
 if(flag==0)
- cout<<"\n\nrecord not exist";
+ cout<<"\n\nRecord does not exist";
     getch();
 }
 //    	function to modify record of file
@@ -172,8 +171,8 @@ void modify_product()
 {
     int no,found=0;
     clrscr();
-    cout<<"\n\n\tTo Modify ";
-    cout<<"\n\n\tPlease Enter The Product No. of The Product ";
+    cout<<"\n\n\tTo Modify:- ";
+    cout<<"\n\n\tPlease Enter The Product No. of The Product:- ";
     cin>>no;
     fp.open("item.dat",ios::in|ios::out);
     while(fp.read((char*)&pr,sizeof(product)) && found==0)
@@ -201,7 +200,7 @@ void delete_product()
     int no;
     clrscr();
     cout<<"\n\n\n\tDelete Record";
-    cout<<"\n\nPlease Enter The product no. of The Product You Want To Delete ";
+    cout<<"\n\nPlease Enter The product no. of The Product You Want To Delete:- ";
     cin>>no;
     fp.open("item.dat",ios::in|ios::out);
     fstream fp2;
@@ -229,8 +228,8 @@ void delete_product()
      fp.open("item.dat",ios::in);
      if(!fp.read((char*)&pr,sizeof(product)))
      {
-       cout<<"product out of stock";
-       cout<<"\n\n\nback to main menu ....";
+       cout<<"Product out of stock";
+       cout<<"\n\n\nBack to main menu ....";
        getch();
        fp.close();
        main_menu();
@@ -262,7 +261,7 @@ void delete_product()
     do{
 	 //fp.open("Shop.dat",ios::in);
 	 fp.open("item.dat",ios::in|ios::out|ios::binary);
-	 cout<<"\n\nEnter The Product No. Of The Product : ";
+	 cout<<"\n\nEnter The Product No. Of The Product:- ";
 	 cin>>order_arr[c];
 	 int qt,pos;
 	 while(fp.read((char*)&pr,sizeof(product)))
@@ -289,7 +288,7 @@ void delete_product()
 	   return;
 	 }
 
-	 cout<<"\nQuantity in number : ";
+	 cout<<"\nQuantity in number:- ";
 	 cin>>quan[c];
 	 if(quan[c]>qt)
 	 {
@@ -346,13 +345,13 @@ void intro()
 {
  clrscr();
   cout<<setw(46)<<"~~~~~~~WELCOME~~~~~~~";
-  cout<<"\n\n\t\t\t~~~~~~~~~~~SUPER MARKET~~~~~~~~~ "<<endl<<endl;
+  cout<<"\n\n\t\t   ~~~~~~~~~~~SUPER MARKET~~~~~~~~~ "<<endl<<endl;
   int flag=0;
       char u[30],p[30],user[30],password[30],c;
 
-      cout<<"\nUSERID:::";
+      cout<<"\nUSERID:- ";
       gets(u);
-      cout<<"\npassword::";
+      cout<<"\npassword:- ";
       gets(p);
       ifstream file2("passwd.dat");
       while(!file2.eof())
@@ -364,7 +363,7 @@ void intro()
 	  {
 	     file2.close();
 	     flag=1;
-	     cout<<"\n login successful!!";
+	     cout<<"\n\n Login Successful!!";
 	     getch();
 	     break;
 	  }
@@ -373,11 +372,11 @@ void intro()
 
 	if(flag==0)
 	 {
-	 cout<<"\n failed!!";
+	 cout<<"\n Failed!!";
 	 getch();
 	 }
 	 else{
-	      cout<<"\nenter any key to continue";
+	      cout<<"\nEnter any key to continue";
 	     getch();
 	     main_menu();
 	    }
@@ -409,7 +408,7 @@ void admin_menu()
     case '3':
 	       int num;
 	       clrscr();
-	       cout<<"\n\n\tPlease Enter The Product No. ";
+	       cout<<"\n\n\tPlease Enter The Product No:- ";
 	       cin>>num;
 	       display_sp(num);
 	       break;
@@ -434,7 +433,7 @@ void main_menu()
 	  cout<<"\n\n\t01. CUSTOMER";
 	  cout<<"\n\n\t02. ADMINISTRATOR";
 	  cout<<"\n\n\t03. EXIT";
-	  cout<<"\n\n\tPlease Select Your Option (1-3) ";
+	  cout<<"\n\n\tPlease Select Your Option (1-3):-  ";
 	  ch=getch();
 	  switch(ch)
 	  {
