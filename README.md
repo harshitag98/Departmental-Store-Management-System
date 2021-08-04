@@ -20,3 +20,6 @@ The user while purchasing a product first go through the products available
 and based on that he makes choice of what product is needed to be bought.
 After successful selection, he will be given the bill of his purchase based 
 on the discount provided on that particular product.
+
+Modified using git.
+- This is the best!
